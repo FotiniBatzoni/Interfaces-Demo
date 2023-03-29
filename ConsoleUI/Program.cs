@@ -12,10 +12,10 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            List<PhysicalProductModel> cart = AddSampleData();
+            List<IProductModel> cart = AddSampleData();
             CustomerModel customer = GetCustomer();
 
-            foreach (PhysicalProductModel prod in cart)
+            foreach (var prod in cart)
             {
                 prod.ShipItem(customer);
             }
@@ -35,13 +35,14 @@ namespace ConsoleUI
             };
         }
 
-        private static List<PhysicalProductModel> AddSampleData()
+        private static List<IProductModel> AddSampleData()
         {
-            List<PhysicalProductModel> output = new List<PhysicalProductModel>();
+            List<IProductModel> output = new List<IProductModel>();
 
             output.Add(new PhysicalProductModel { Title = "Nerf Footbal" });
             output.Add(new PhysicalProductModel { Title = "T-Shirt" });
             output.Add(new PhysicalProductModel { Title = "Hard Drive" });
+            output.Add(new DigitalProductModel { Title = "Lesson Source Code" });
 
             return output;
         }

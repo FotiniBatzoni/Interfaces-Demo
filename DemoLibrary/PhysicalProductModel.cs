@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DemoLibrary
 {
-    public class PhysicalProductModel
+    public class PhysicalProductModel : lProductModel
     {
-        public string Title { get; set;}
+        public string Title { get; set; }
 
-        public bool HasOrderBeenCompleted { get;private set;}
+        public bool HasOrderBeenCompleted { get; private set; }
 
         public void ShipItem(CustomerModel customer)
         {
-            if (HasOrderBeenCompleted == false) 
+            if (HasOrderBeenCompleted == false)
             {
                 Console.WriteLine($"Simulating shipping {Title} to {customer.LastName} in {customer.City} ");
                 HasOrderBeenCompleted = true;

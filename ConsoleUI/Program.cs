@@ -18,6 +18,11 @@ namespace ConsoleUI
             foreach (var prod in cart)
             {
                 prod.ShipItem(customer);
+
+                if(prod is IDigitalProductModel digital)
+                {
+                    Console.WriteLine($"For the {digital.Title} you have {digital.TotalDownloadsLeft} downloads left");
+                }
             }
 
             Console.ReadLine();

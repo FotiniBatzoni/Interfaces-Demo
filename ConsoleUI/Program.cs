@@ -48,6 +48,7 @@ namespace ConsoleUI
             output.Add(new PhysicalProductModel { Title = "T-Shirt" });
             output.Add(new PhysicalProductModel { Title = "Hard Drive" });
             output.Add(new DigitalProductModel { Title = "Lesson Source Code" });
+            output.Add(new CourseProductModel { Title = ".NET Course" });
 
             return output;
         }
